@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Caching -->
+    <meta http-equiv="Cache-control" content="public">
+    <!--  META TAGS -->
+    <meta name="title" property="og:title" content="Foreman-B Portfolio">
+    <meta name="description" property="og:title" content="Hey, I'm Foreman-B. A 31 years old Back End Web Developer who have been coding for 2 years!">
+	<meta property="og:type" content="website" />
+    <meta name="description" property="og:image" content="">
+    <meta property="og:url" content="" />
+    <link rel="icon" href="">
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">
+	<title>Foreman-B | Home</title>
+</head>
+<body>
+    <section class="main">
+        <!-- Nav Bar -->
+        <div>
+        <nav class="navbar navbar-expand-lg" id="home">
+            <a class="navbar-brand" href=""><img src="{% static 'images/top_logo.png' %}" alt="Site Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-grid align-items-center"><ion-icon name="apps" style="color: white;font-size: 1.4rem;"></ion-icon></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link home" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link a" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="header_content">
+            <div>
+            <h4>Back-End Developer</h4>
+            <h1>Hi, I'm <span class="header_colored">{{ config.name }}</span>, <br>From {{ config.country }}</h1>
+            <div class="icons">
+                {% if config.links.github %}
+                <a href="{{ config.links.github }}" target="_blank" class="fab fa-github"></a>
+                {% endif %}
+                {% if config.links.linkedin %}
+                <a href="{{ config.links.linkedin }}" target="_blank" class="fab fa-linkedin-in" id="linkedin"></a>
+                {% endif %}
+                {% if config.links.twitter %}
+                <a href="{{ config.links.twitter }}" target="_blank" class="fab fa-twitter" id="twitter"></a>
+                {% endif %}
+                {% if config.links.discord %}
+                <a href="{{ config.links.discord }}" target="_blank" class="fab fa-discord" id="discord"></a>
+                {% endif %}
+            </div></div>
+    </section>
+
+    <section class="second">
+        <!-- ABOUT ME -->
+        <div class="about reveal" id="about">
+            <div class="row">
+                <div class="col-md-0 col-sm-0 content">
+                    <h1 class="title">About me</h1>
+                    <div style="font-size: 1.1rem;" class="title">
+                        <p>I'm Abdulfatai Hamsat, a Backend Developer in training with a growing skillset in Python, Django, relational databases, APIs, and server-side application architecture.
+                            Through the ALX Back-End Web Development Program, I’ve developed hands-on experience crafting backend logic, handling data structures, working with version control, 
+                            and collaborating through Git/GitHub.</p>
+                        <p>I’m passionate about writing clean, maintainable code and exploring how backend systems power real-world applications. My focus is on building scalable, secure, and well-structured solutions, one project at a time.</p>
+                        <p>I’m continuously learning, improving, and expanding my technical abilities—aiming to become a strong contributor in the world of backend engineering. </p>
+                    </div>
+
+                    <p class="">{{ config.introduction }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MY SKILLS -->
+        <div class="skills reveal" id="skills">
+            <h1 class="title">My Skills</h1>
+            <div class="row">
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" style="filter: brightness(0) invert(1);" />Django</div>
+                <!-- <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />Javascript</div> -->
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />Python</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />Bootstrap</div>
+                <div class="col-md-3 col-sm-12 box"><i class="devicon-html5-plain colored"></i>HTML5</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />CSS3</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />Javascript</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />Git</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" style="filter: invert(1);" />GitHub</div>
+                <!-- <div class="col-md-3 col-sm-12 box"><i class="devicon-flask-original"></i>Flask</div> -->
+            </div>
+        </div>
+
+        <!-- MY PROJECTS -->
+        <div class="projects reveal" id="projects">
+            <h1 class="title-projects">My Projects</h1>
+            <div id="project-django-portfolio" style="max-width:900px;margin:24px auto;padding:20px;border-radius:10px;background:#ffffff;font-family:Arial, sans-serif;color:#333;">
+                <h3 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">Django Portfolio Project</h3>
+
+            <p style="margin:8px 0 16px;">
+                <strong>Project Title:</strong> Personal Portfolio Website (Built with Django)<br>
+                <strong>Tech Stack:</strong> Django · Python · HTML/CSS · Git · GitHub
+            </p>
+
+            <p style="margin:0 0 12px;">
+                This is my first project built using the <strong>Django framework</strong>. The goal was to create a clean, dynamic portfolio website that showcases my skills, education, and development journey as an aspiring Back-End Developer.
+            </p>
+
+            <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
+            <ul style="margin:0 0 12px 20px;line-height:1.6;">
+                <li><strong>Dynamic Pages:</strong> Reusable templates and views for About, Skills, Contact, and Projects.</li>
+                <li><strong>Project Listing:</strong> A dedicated section to display projects with descriptions and tech used.</li>
+                <li><strong>Backend Logic:</strong> Django views, URL routing, and template rendering to organize content.</li>
+                <li><strong>Version Control:</strong> Managed with Git and hosted on GitHub for collaboration and tracking.</li>
+            </ul>
+
+            <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
+            <ul style="margin:0 0 16px 20px;line-height:1.6;">
+                <li>How Django follows the MVT pattern and structures web applications.</li>
+                <li>Working with views, templates, URL routing, and static files.</li>
+                <li>Project organization best practices and using Git for source control.</li>
+            </ul>
+
+            <p style="margin:0 0 16px;">
+                This project marks the beginning of my journey building real-world applications with Django. I will continue to expand it with new features, better styling, and deployment to a cloud platform.
+            </p>
+
+            <p style="margin:0;">
+                <a href="https://github.com/Foreman-b/Foreman-B_Portfolio1.git" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:#555555;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;">
+                View on GitHub
+                </a>
+            </p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact reveal" id="contact">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 left">
+                    <h4>Contact Me:</h4>
+                    <p>• <span>Email:</span> {{ config.contact.email }}</p>
+                    <p>• <span>Discord:</span> {{ config.contact.discord }}</p>
+                    <p>• <span>WhatsApp:</span> 08144398230 </p>
+                </div>
+                <div class="col-md-7 col-sm-12 right">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="email" placeholder="Your email" name="email">
+                        <input type="text" placeholder="Your name" name="name">
+                        <textarea name="message" placeholder="Your message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="width: 90%;">
+        <p>Copyright © Foreman-B. Made with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="">Foreman-B</a></p>
+    </footer>
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/8043a4a7f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- ANIMATIONS JQUERY -->
+    <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 1200, function(){
+  
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+  <script>
+    function handleScroll(){
+        reveals = $(".reveal")
+        for(var i =0;i < reveals.length; i++){
+                var x = window.innerHeight - 115
+                if(reveals[i].getBoundingClientRect().top < x){
+                    reveals[i].classList.add("active");
+                }
+            }
+    }
+    window.addEventListener("scroll", handleScroll);
+    </script>
+  <style>
+    .main{
+        background-image: url("{% static 'images/bg2.jpg'%}")!important;
+    }
+    .reveal{
+    position: relative;
+    transform: translateY(25px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+    @media(max-width: 750px){
+        .main{
+            background-image: url("{% static 'images/background-phone.jpg'%}")!important;
+        }
+    }
+  </style>
+</body>
+</html>
+
+
