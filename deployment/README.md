@@ -39,9 +39,9 @@ DEBUG = False
 * [Render](https://render.com/) | Details: [Article](https://docs.render.com/deploy-django)
 
 ### Support:
-* For any additional support, contact me on discord (username: jock3r9).
+* For any additional support, contact me on discord (username: foremanb).
 
 ### Donation:
 If you love the portfolio, feel free to support me:
 
-<a href='https://ko-fi.com/jock3r9'><img src='https://ko-fi.com/img/githubbutton_sm.svg' height="27px"/></a>
+<a href=''><img src='' height="27px"/></a>

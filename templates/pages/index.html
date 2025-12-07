@@ -67,6 +67,28 @@
                 {% if config.links.discord %}
                 <a href="{{ config.links.discord }}" target="_blank" class="fab fa-discord" id="discord"></a>
                 {% endif %}
+                <div title="Foreman-B Picture" style="
+                    width: 300px;            /* Fixed width for the container */
+                    height: 300px;           /* Fixed height to match the width for a perfect circle */
+    
+                    border: 3px solid #ffffff21; /* A more prominent border for the circle */
+                    padding: 5px;           /* Space inside the border */
+                    background-color: #ffffff;
+                    text-align: center;      
+                    border-radius: 50%;      /* KEY CHANGE: Makes the container a circle */
+                    overflow: hidden;        /* Hides any part of the image that goes outside the circle */
+                ">
+                    <img src="{% static 'images/foremanb.jpg' %}" 
+                        alt="picture" 
+                        style="
+                            /* Ensure the image is a perfect square to fit the circular container */
+                            width: 250px;           /* STATIC Image Width */
+                            height:300px;          /* STATIC Image Height (Must match width for a clean circle) */
+                            display: block;         
+                            margin: 10px auto;      /* Centers the image inside the 420px container */
+                            object-fit: cover;      /* Important: Ensures the image covers the area without stretching */
+                        ">
+                </div>
             </div></div>
     </section>
 
@@ -109,42 +131,52 @@
         <!-- MY PROJECTS -->
         <div class="projects reveal" id="projects">
             <h1 class="title-projects">My Projects</h1>
-            <div id="project-django-portfolio" style="max-width:900px;margin:24px auto;padding:20px;border-radius:10px;background:#ffffff;font-family:Arial, sans-serif;color:#333;">
+            <div id="project-django-portfolio" style="
+                max-width:900px;
+                margin: 24px 0 24px 0; /* KEY CHANGE: Sets margin-left to 0, margin-right to 0, which aligns it left */
+                padding:20px;
+                border-radius:10px;
+                background:#ffffff;
+                font-family:Arial, sans-serif;
+                color:#333;
+                /* Optional: You can explicitly set the left margin if you need space, e.g., margin: 24px 0 24px 20px; */
+            ">
                 <h3 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">Django Portfolio Project</h3>
 
-            <p style="margin:8px 0 16px;">
-                <strong>Project Title:</strong> Personal Portfolio Website (Built with Django)<br>
-                <strong>Tech Stack:</strong> Django · Python · HTML/CSS · Git · GitHub
-            </p>
+                <p style="margin:8px 0 16px;">
+                    <strong>Project Title:</strong> Personal Portfolio Website (Built with Django)<br>
+                    <strong>Tech Stack:</strong> Django · Python · HTML/CSS/Javascript · Git · GitHub
+                </p>
 
-            <p style="margin:0 0 12px;">
-                This is my first project built using the <strong>Django framework</strong>. The goal was to create a clean, dynamic portfolio website that showcases my skills, education, and development journey as an aspiring Back-End Developer.
-            </p>
+                <p style="margin:0 0 12px;">
+                    This is my first project built using the <strong>Django framework</strong>. The goal was to create a clean, dynamic portfolio website that showcases my skills, education, and development journey as an aspiring Back-End Developer.
+                </p>
 
-            <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
-            <ul style="margin:0 0 12px 20px;line-height:1.6;">
-                <li><strong>Dynamic Pages:</strong> Reusable templates and views for About, Skills, Contact, and Projects.</li>
-                <li><strong>Project Listing:</strong> A dedicated section to display projects with descriptions and tech used.</li>
-                <li><strong>Backend Logic:</strong> Django views, URL routing, and template rendering to organize content.</li>
-                <li><strong>Version Control:</strong> Managed with Git and hosted on GitHub for collaboration and tracking.</li>
-            </ul>
+                <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
+                <ul style="margin:0 0 12px 20px;line-height:1.6;">
+                    <li><strong>Dynamic Pages:</strong> Reusable templates and views for About, Skills, Contact, and Projects.</li>
+                    <li><strong>Project Listing:</strong> A dedicated section to display projects with descriptions and tech used.</li>
+                    <li><strong>Backend Logic:</strong> Django views, URL routing, and template rendering to organize content.</li>
+                    <li><strong>Version Control:</strong> Managed with Git and hosted on GitHub for collaboration and tracking.</li>
+                </ul>
 
-            <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
-            <ul style="margin:0 0 16px 20px;line-height:1.6;">
-                <li>How Django follows the MVT pattern and structures web applications.</li>
-                <li>Working with views, templates, URL routing, and static files.</li>
-                <li>Project organization best practices and using Git for source control.</li>
-            </ul>
+                <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
+                <ul style="margin:0 0 16px 20px;line-height:1.6;">
+                    <li>How Django follows the MVT pattern and structures web applications.</li>
+                    <li>Working with views, templates, URL routing, and static files.</li>
+                    <li>Project organization best practices and using Git for source control.</li>
+                </ul>
 
-            <p style="margin:0 0 16px;">
-                This project marks the beginning of my journey building real-world applications with Django. I will continue to expand it with new features, better styling, and deployment to a cloud platform.
-            </p>
+                <p style="margin:0 0 16px;">
+                    This project marks the beginning of my journey building real-world applications with Django. I will continue to expand it with new features, better styling, and deployment to a cloud platform.
+                </p>
 
-            <p style="margin:0;">
-                <a href="https://github.com/Foreman-b/Foreman-B_Portfolio1.git" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:#555555;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;">
-                View on GitHub
-                </a>
-            </p>
+                <p style="margin:0;">
+                    <a href="https://github.com/Foreman-b/Foreman-B_Portfolio1.git" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:#555555;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;">
+                    View on GitHub
+                    </a>
+                </p>
+            </div>
         </div>
 
         <!-- CONTACT -->
