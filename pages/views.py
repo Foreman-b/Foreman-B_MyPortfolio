@@ -2,10 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 import json, requests
+from pathlib import Path
+
 # Create your views here.
 with open('portfolio.config.json', 'r') as fp:
 	config = json.load(fp)
-def index(request):
+
+def foremanbportfolio(request):
+	config_path = Path(__file__).resolve().parent.parent / "portfolio.config.json"
+	with open(config_path) as f:
+		data = json.load(f)
+
 	projects = Projects.objects.all()
 	jobs = Jobs.objects.all()
 	ctx = {'config': config['Config'],'projects': projects if projects else None,"jobs": jobs if jobs else None}
@@ -17,7 +24,9 @@ def index(request):
 		"content" : f"**EMAIL**: {email}\n**NAME:** {name}\n**MESSAGE:** {message}"
 		}
 		result = requests.post(config['Config']["contact"]["webhook_url"], json=data)
-	return render(request, 'pages/index.html',ctx)
+		
+	return render(request, 'pages/foremanbportfolio.html')
 
 def blog(request):
 	return HttpResponse("Coming soon.")
+	

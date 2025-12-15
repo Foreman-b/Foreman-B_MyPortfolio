@@ -2,7 +2,7 @@
 
 
 # Foreman-B Portfolio
-### [Demo](https://Foreman-B.vercel.app/)
+### [Demo](https://foremanbportfolio.onrender.com)
 > A Foreman-B theme portfolio to share your skills and projects around people!
 
 ## Features
@@ -28,7 +28,7 @@ git clone https://github.com/Foreman-b/Foreman-B_Portfolio1.git
 ```
  3. Create and activate a new virtual environment:
 ```bash
- python -m venv env
+ python -m venv env_name
  source env/Scripts/activate
 ```
   4. Install the project dependencies:
@@ -41,19 +41,19 @@ git clone https://github.com/Foreman-b/Foreman-B_Portfolio1.git
 ```json
   {
     "Config": {
-      "name": "Abdulfatai Abiola Hamsat",
-      "country": "Nigeria",
+      "name": "",
+      "country": "",
       "introduction": "",
       "links": {
-        "github": "https://github.com/Foreman-b",
-        "linkedin": "https://linkedin.com/in/abdulfataihamsat",
-        "twitter": "https://twitter.com/recogniseu",
-        "discord": "https://discord.com/foremanb"
+        "github": "",
+        "linkedin": "",
+        "twitter": "",
+        "discord": ""
       },
       "contact": {
-        "email": "hamzat4life@gmail.com",
-        "discord": "foremanb",
-        "whatsapp": "08144398230"
+        "email": "",
+        "discord": "",
+        "whatsapp": ""
       }
     }
   }

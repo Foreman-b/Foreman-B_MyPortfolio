@@ -16,7 +16,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<link rel="stylesheet" href="{% static 'pages/css/style.css'%}">
 	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">
 	<title>Foreman-B | Home</title>
 </head>
@@ -26,7 +26,8 @@
         <div>
         <nav class="navbar navbar-expand-lg" id="home">
             <a class="navbar-brand" href=""><img src="{% static 'images/top_logo.png' %}" alt="Site Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="bu
+            tton" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon d-grid align-items-center"><ion-icon name="apps" style="color: white;font-size: 1.4rem;"></ion-icon></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -97,7 +98,7 @@
         <div class="about reveal" id="about">
             <div class="row">
                 <div class="col-md-0 col-sm-0 content">
-                    <h1 class="title">About me</h1>
+                    <h1 class="title">About Me</h1>
                     <div style="font-size: 1.1rem;" class="title">
                         <p>I'm Abdulfatai Hamsat, a Junior Back-End Web Developer with hands-on experience in Python, Django, MySQL, and RESTful API development. Currently enrolled in the ALX Back-End Web Development program, building practical backend solutions with a strong focus on server-side logic, database design, and application performance.</p>
                         <p>Experienced in using Git and GitHub for version control and collaborative development. Skilled in designing, querying, and managing relational databases using MySQL to support scalable and efficient backend systems. Familiar with HTML and CSS to support backend-integrated web applications.</p>
@@ -262,7 +263,7 @@
 }
     @media(max-width: 750px){
         .main{
-            background-image: url("{% static 'images/background-phone.jpg'%}")!important;
+            background-image: url("{% static 'images/bg2.jpg' %}")!important;
         }
     }
   </style>

@@ -3,6 +3,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('', views.foremanbportfolio, name="home"),
     path('blog', views.blog, name="blog")
 ]
