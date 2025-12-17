@@ -9,11 +9,11 @@ with open('portfolio.config.json', 'r') as fp:
 	config = json.load(fp)
 
 def foremanbportfolio(request):
+	projects = Projects.objects.all()
 	config_path = Path(__file__).resolve().parent.parent / "portfolio.config.json"
 	with open(config_path) as f:
 		data = json.load(f)
 
-	projects = Projects.objects.all()
 	jobs = Jobs.objects.all()
 	ctx = {'config': config['Config'],'projects': projects if projects else None,"jobs": jobs if jobs else None}
 	if request.method == "POST":
