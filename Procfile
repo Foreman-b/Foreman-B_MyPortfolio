@@ -1,1 +1,1 @@
-web: gunicorn foremanbportfolio.wsgi:application
+web: gunicorn portfolio.wsgi:application
