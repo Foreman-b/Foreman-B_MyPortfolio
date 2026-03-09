@@ -1,13 +1,13 @@
 from rest_framework import serializers
-from pages.models import Projects, Jobs
+from pages.models import Project, Job
 
 ## serializers here:
-class ProjectsSerializer(serializers.ModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = Projects
+		model = Project
 		fields = '__all__'
 
-class JobsSerializer(serializers.ModelSerializer):
+class JobSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = Jobs
+		model = Job
 		fields = '__all__'

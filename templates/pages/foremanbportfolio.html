@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'%}">
 	<title>Foreman-B | Home</title>
 </head>
+
+{% block content%}
 <body>
     <section class="main">
         <!-- Nav Bar -->
@@ -100,8 +102,8 @@
                 <div class="col-md-0 col-sm-0 content">
                     <h1 class="title">About Me</h1>
                     <div style="font-size: 1.1rem;" class="title">
-                        <p>I'm Abdulfatai Hamsat, a Junior Back-End Web Developer with hands-on experience in Python, Django, MySQL, and RESTful API development. Currently enrolled in the ALX Back-End Web Development program, building practical backend solutions with a strong focus on server-side logic, database design, and application performance.</p>
-                        <p>Experienced in using Git and GitHub for version control and collaborative development. Skilled in designing, querying, and managing relational databases using MySQL to support scalable and efficient backend systems. Familiar with HTML and CSS to support backend-integrated web applications.</p>
+                        <p>I'm Abdulfatai Hamsat, a Resourceful Backend Engineer with hands-on experience designing and deploying database-driven web applications. Proficient in architecting RESTful APIs using Django and managing relational databases via PostgreSQL and MySQL.</p>
+                        <p>Demonstrated expertise in cloud deployment, specifically managing AWS EC2 environments and configuring Nginx reverse proxies for production-grade stability. Active member of the ALX Africa cohort LOS-BE-1025, committed to thoughtful code refactoring and enhancing application performance. Experienced in Agile workflows and collaborative version control using Git/GitHub.</p>
                         <p>Passionate about problem-solving and continuous learning. Actively seeking remote junior backend developer roles, internships, or contract opportunities where I can contribute to production systems and grow as a backend engineer.</p>
                     </div>
 
@@ -116,6 +118,9 @@
             <div class="row">
                 <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" style="filter: brightness(0) invert(1);" />Django</div>
                 <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />Python</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" style="filter: brightness(0) invert(1);" />Web API</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />AWS</div>
+                <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" /> PostgreSQL </div>
                 <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />MySQL</div>
                 <div class="col-md-3 col-sm-12 box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />Bootstrap</div>
                 <div class="col-md-3 col-sm-12 box"><i class="devicon-html5-plain colored"></i>HTML5</div>
@@ -127,10 +132,77 @@
         </div>
 
         <!-- MY PROJECTS -->
-        <div class="projects reveal" id="projects">
+        <div class="projects reveal" id="projects" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px;">
+            <h1 class="title-projects" style="width: 100%; ">My Projects</h1>
+                
+            {% for project in projects %}
+            <div class="project-card" style="
+                flex: 1 1 400px; /* Allows cards to be side-by-side but stack on small screens */
+                max-width: 600px;
+                margin: 0; 
+                padding: 20px;
+                border-radius: 10px;
+                background: #ffffff;
+                font-family: Arial, sans-serif;
+                color: #333;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds separation between cards */
+                display: flex;
+                flex-direction: column;
+            ">
+
+                <div class="container my-1">
+                {% if project.banner %}
+                    <img src="{{ project.banner.url }}" 
+                    class="img-fluid d-block mx-auto w-75 shadow rounded">
+                    
+                {% endif %}
+                </div>  
+
+                <h4 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">{{ project.title }}</h4>
+
+                <p style="margin:8px 0 16px;">
+                    <strong>Tech Stack:</strong> {{project.tech_stack}}
+                </p>
+
+                <p style="margin:0 0 5px;">
+                    {{project.description}}
+                </p>
+
+                <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
+                <ul>
+                    {% for line in project.key_features.splitlines %}
+                        {% if line.strip %}<li>{{ line }}</li>{% endif %}
+                    {% endfor %}
+                </ul>
+
+                <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
+                <ul style="flex-grow: 1;"> {% for line in project.lesson_learned.splitlines %}
+                        {% if line.strip %}<li>{{ line }}</li>{% endif %}
+                    {% endfor %}
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <p style="margin: 0;">
+                        <a href="{{ project.github }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
+                            GitHub
+                        </a>
+                    </p>
+
+                    <p style="margin: 0;">
+                        <a href="{{ project.url }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
+                            Live Url
+                        </a>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+        {% comment %} <div class="projects reveal" id="projects">
             <h1 class="title-projects">My Projects</h1>
+                
+            {% for project in projects %}
             <div id="project-django-portfolio" style="
-                max-width:900px;
+                max-width:600px;
                 margin: 24px 0 24px 0; /* KEY CHANGE: Sets margin-left to 0, margin-right to 0, which aligns it left */
                 padding:20px;
                 border-radius:10px;
@@ -139,44 +211,53 @@
                 color:#333;
                 /* Optional: You can explicitly set the left margin if you need space, e.g., margin: 24px 0 24px 20px; */
             ">
-                <h3 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">Django Portfolio Project</h3>
+                
+                <h4 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">{{ project.title }}</h4>
 
                 <p style="margin:8px 0 16px;">
-                    <strong>Project Title:</strong> Personal Portfolio Website (Built with Django)<br>
-                    <strong>Tech Stack:</strong> Django · Python · HTML/CSS/Javascript · Git · GitHub
+                    <strong>Tech Stack:</strong> {{project.tech_stack}}
                 </p>
 
-                <p style="margin:0 0 12px;">
-                    This is my first project built using the <strong>Django framework</strong>. The goal was to create a clean, dynamic portfolio website that showcases my skills, education, and development journey as an aspiring Back-End Developer.
+                <p style="margin:0 0 5px;">
+                    {{project.description}}
                 </p>
 
                 <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
-                <ul style="margin:0 0 12px 20px;line-height:1.6;">
-                    <li><strong>Dynamic Pages:</strong> Reusable templates and views for About, Skills, Contact, and Projects.</li>
-                    <li><strong>Project Listing:</strong> A dedicated section to display projects with descriptions and tech used.</li>
-                    <li><strong>Backend Logic:</strong> Django views, URL routing, and template rendering to organize content.</li>
-                    <li><strong>Version Control:</strong> Managed with Git and hosted on GitHub for collaboration and tracking.</li>
-                </ul>
+
+                   <ul >
+                        {% for line in project.key_features.splitlines %}
+                            <li>{{ line }}</li>
+                        {% endfor %}
+                    </ul>
+
+                   
+                    
+                
 
                 <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
-                <ul style="margin:0 0 16px 20px;line-height:1.6;">
-                    <li>How Django follows the MVT pattern and structures web applications.</li>
-                    <li>Working with views, templates, URL routing, and static files.</li>
-                    <li>Project organization best practices and using Git for source control.</li>
-                </ul>
+                    <ul >
+                        {% for line in project.lesson_learned.splitlines %}
+                            <li>{{ line }}</li>
+                        {% endfor %}
+                    </ul>
 
-                <p style="margin:0 0 16px;">
-                    This project marks the beginning of my journey building real-world applications with Django. I will continue to expand it with new features, better styling, and deployment to a cloud platform.
+               <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <p style="margin: 0;">
+                    <a href="{{ project.github }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
+                        View on GitHub
+                    </a>
                 </p>
 
-                <p style="margin:0;">
-                    <a href="https://github.com/Foreman-b/Foreman-B_Portfolio1.git" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:#555555;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;">
-                    View on GitHub
+                <p style="margin: 0;">
+                    <a href="{{ project.url }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
+                        Visit
                     </a>
                 </p>
             </div>
-        </div>
 
+            </div>
+        </div>
+        {% endfor %} {% endcomment %}
         <!-- CONTACT -->
         <div class="contact reveal" id="contact">
             <div class="row">
@@ -268,6 +349,7 @@
     }
   </style>
 </body>
+{% endblock %}
 </html>
 
 
