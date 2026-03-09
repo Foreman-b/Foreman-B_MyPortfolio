@@ -5,6 +5,8 @@ __pycache__/
 migrations
 media
 fbptf
+staticfiles
+static
 
 
 # C extensions

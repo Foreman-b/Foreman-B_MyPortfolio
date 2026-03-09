@@ -81,12 +81,12 @@
                     border-radius: 50%;      /* KEY CHANGE: Makes the container a circle */
                     overflow: hidden;        /* Hides any part of the image that goes outside the circle */
                 ">
-                    <img src="{% static 'images/foremanb.jpg' %}" 
+                    <img src="{% static 'pages/images/foremanb.jpg' %}" alt="Foreman-B Profile"
                         alt="picture" 
                         style="
                             /* Ensure the image is a perfect square to fit the circular container */
-                            width: 200px;           /* STATIC Image Width */
-                            height:250px;          /* STATIC Image Height (Must match width for a clean circle) */
+                            width: 190px;           /* STATIC Image Width */
+                            height:220px;          /* STATIC Image Height (Must match width for a clean circle) */
                             display: block;         
                             margin: 10px auto;      /* Centers the image inside the 420px container */
                             object-fit: cover;      /* Important: Ensures the image covers the area without stretching */
@@ -197,67 +197,7 @@
             </div>
             {% endfor %}
         </div>    
-        {% comment %} <div class="projects reveal" id="projects">
-            <h1 class="title-projects">My Projects</h1>
-                
-            {% for project in projects %}
-            <div id="project-django-portfolio" style="
-                max-width:600px;
-                margin: 24px 0 24px 0; /* KEY CHANGE: Sets margin-left to 0, margin-right to 0, which aligns it left */
-                padding:20px;
-                border-radius:10px;
-                background:#ffffff;
-                font-family:Arial, sans-serif;
-                color:#333;
-                /* Optional: You can explicitly set the left margin if you need space, e.g., margin: 24px 0 24px 20px; */
-            ">
-                
-                <h4 style="margin-top:0;font-family:'Arial Black', Arial, sans-serif;color:#555555;">{{ project.title }}</h4>
-
-                <p style="margin:8px 0 16px;">
-                    <strong>Tech Stack:</strong> {{project.tech_stack}}
-                </p>
-
-                <p style="margin:0 0 5px;">
-                    {{project.description}}
-                </p>
-
-                <h4 style="margin:16px 0 8px;color:#555555;">Key Features</h4>
-
-                   <ul >
-                        {% for line in project.key_features.splitlines %}
-                            <li>{{ line }}</li>
-                        {% endfor %}
-                    </ul>
-
-                   
-                    
-                
-
-                <h4 style="margin:12px 0 8px;color:#555555;">What I Learned</h4>
-                    <ul >
-                        {% for line in project.lesson_learned.splitlines %}
-                            <li>{{ line }}</li>
-                        {% endfor %}
-                    </ul>
-
-               <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <p style="margin: 0;">
-                    <a href="{{ project.github }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
-                        View on GitHub
-                    </a>
-                </p>
-
-                <p style="margin: 0;">
-                    <a href="{{ project.url }}" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 16px; background: #555555; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">
-                        Visit
-                    </a>
-                </p>
-            </div>
-
-            </div>
-        </div>
-        {% endfor %} {% endcomment %}
+        
         <!-- CONTACT -->
         <div class="contact reveal" id="contact">
             <div class="row">
