@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY",  "unsafe-dev-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "foremanbportfolio.onrender.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["foremanb-production.up.railway.app", "localhost", "127.0.0.1"]
 
 
 # Application definition
