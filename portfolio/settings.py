@@ -28,6 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY",  "unsafe-dev-key")
 DEBUG = True
 
 ALLOWED_HOSTS = ["foremanb-production.up.railway.app", "localhost", "127.0.0.1"]
+CORS_ALLOWED_ORIGINS = ["https://foremanb-production.up.railway.app/"]
 
 
 # Application definition
